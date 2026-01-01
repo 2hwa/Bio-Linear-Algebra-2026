@@ -2,9 +2,30 @@
 # 열(Column): 샘플 (S1, S2, S3, S4)
 # S1, S2는 대조군(Control), S3, S4는 실험군(Treatment)입니다.
 
-expression_matrix = [
+exm = [
     [100, 110, 500, 520],   # Gene_A
     [200, 210, 190, 205],   # Gene_B
     [50, 45, 10, 12],       # Gene_C
     [1000, 1050, 1100, 1080] # Gene_D
 ]
+
+rowidx = 0
+colidx = 0 
+colsum = 0
+numrows = len(exm)
+numcols = len(exm[0])
+
+
+while colidx < numcols:
+  while rowidx < numrows:
+    colsum += exm[rowidx][colidx]
+    rowidx += 1
+
+  rowidx = 0
+  while rowidx < numrows:
+    exm[rowidx][colidx] *= 1000000/colsum
+    rowidx += 1
+
+  colsum = 0
+  rowidx = 0
+  colidx += 1
