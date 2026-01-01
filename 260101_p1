@@ -1,0 +1,10 @@
+# 행(Row): 유전자 (Gene_A, Gene_B, Gene_C, Gene_D)
+# 열(Column): 샘플 (S1, S2, S3, S4)
+# S1, S2는 대조군(Control), S3, S4는 실험군(Treatment)입니다.
+
+expression_matrix = [
+    [100, 110, 500, 520],   # Gene_A
+    [200, 210, 190, 205],   # Gene_B
+    [50, 45, 10, 12],       # Gene_C
+    [1000, 1050, 1100, 1080] # Gene_D
+]
